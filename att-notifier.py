@@ -341,6 +341,11 @@ Help content:
 
         text = request.form.get('text')
         filtered = text.split()
+
+        if not filtered:
+            self.DEBUG('Empty command!')
+            return 'Empty command!'
+
         command = filtered[0]
 
         if command not in commands:
